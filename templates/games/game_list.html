@@ -1,0 +1,10 @@
+{% extends '../_base.html'%}
+
+{% block content %}
+<a href="{% url 'create_list' %}"> + Add new game</a>
+{% for game in object_list%}
+<h2 ><a  href="{% url 'game_detail' game.pk %}">{{game.name}}</a></h2>
+{% load static %}
+<img src="{% static 'images/Board+Game+1.jpg' %}" alt="My image">
+{% endfor %}
+{% endblock content %}

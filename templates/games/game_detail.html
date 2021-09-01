@@ -1,0 +1,19 @@
+{% extends '../_base.html'%}
+
+{% block content %}
+<nav>
+    <a href="{% url 'game_list' %}">Home</a>
+    <a href="{% url 'admin:index' %}">Admin</a>
+</nav>
+
+<section>
+    <h1>title:{{game.name}}</h1>
+    <p>Description:{{game.description}}</p>
+    <p>Purchaser:{{game.purchaser}}</p>
+    <a  href="{% url 'update_list' game.pk %}"> + Update game </a>
+    <a  href="{% url 'delete_list' game.pk %}">+ Delete game </a>
+
+
+
+</section>
+{% endblock content %}
